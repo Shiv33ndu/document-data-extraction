@@ -1,0 +1,70 @@
+[
+  {
+    "file_name": "compliance_sample.pdf",
+    "document_type": "compliance",
+    "fields": {
+      "document_name": "DATA PRIVACY COMPLIANCE POLICY Version: 2.1 Effective Date: 01 January 2026 Issued by: Compliance Department Regulation: GDPR (General Data Protection Regulation) Scope: This policy applies to all employees and contractors handling personal data. Requirements: - Personal data must be encrypted - Access must be restricted to authorized personnel - Data breaches must be reported within 72 hours Review Cycle: Annual",
+      "effective_date": "01",
+      "version": "2.1",
+      "regulatory_reference": "GDPR (General Data Protection Regulation) Scope: This policy applies to all employees and contractors handling personal data. Requirements: - Personal data must be encrypted - Access must be restricted to authorized personnel - Data breaches must be reported within 72 hours Review Cycle: Annual",
+      "issuing_authority": "Compliance Department Regulation: GDPR (General Data Protection Regulation) Scope: This policy applies to all employees and contractors handling personal data. Requirements: - Personal data must be encrypted - Access must be restricted to authorized personnel - Data breaches must be reported within 72 hours Review Cycle: Annual"
+    }
+  },
+  {
+    "file_name": "contract_sample.pdf",
+    "document_type": "contract",
+    "fields": {
+      "effective_date": "01 March 2026 Scope of Work",
+      "parties": "Alpha Solutions Ltd. & Beta Technologies Inc"
+    }
+  },
+  {
+    "file_name": "email_sample.pdf",
+    "document_type": "email",
+    "fields": {
+      "from": "alice@example.com To: bob@example.com Cc: team@example.com Sent: 18 Feb 2026 10:30 AM Subject: Project Kickoff Meeting Hi Bob, We will hold the project kickoff meeting on Monday at 2 PM. Please review the attached documents beforehand. Best regards, Alice Project Manager",
+      "to": "bob@example.com Cc: team@example.com Sent: 18 Feb 2026 10:30 AM Subject: Project Kickoff Meeting Hi Bob, We will hold the project kickoff meeting on Monday at 2 PM. Please review the attached documents beforehand. Best regards, Alice Project Manager",
+      "subject": "Project Kickoff Meeting Hi Bob, We will hold the project kickoff meeting on Monday at 2 PM. Please review the attached documents beforehand. Best regards, Alice Project Manager"
+    }
+  },
+  {
+    "file_name": "financial_statement.pdf",
+    "document_type": "financial_statement",
+    "fields": {
+      "total_assets": "350,000",
+      "total_liabilities": "150,000"
+    }
+  },
+  {
+    "file_name": "form_sample.pdf",
+    "document_type": "form",
+    "fields": {
+      "full_name": "John Doe",
+      "date_of_birth": "12/05/1990",
+      "email_address": "john.doe@example.com",
+      "phone_number": "+1-555-123-4567",
+      "address": "456 Elm Street",
+      "signature": "___________________",
+      "date": "20 Feb 2026"
+    }
+  },
+  {
+    "file_name": "invoice_sample.pdf",
+    "document_type": "invoice",
+    "fields": {
+      "invoice_number": "Invoice",
+      "date": "15",
+      "total_amount": "3,700.00"
+    }
+  },
+  {
+    "file_name": "report_sample.pdf",
+    "document_type": "report",
+    "fields": {
+      "title": "ANNUAL PERFORMANCE REPORT 2025 Prepared by: Data Insights Team Date: 31 January 2026 Executive Summary: The company experienced a 25% increase in revenue compared to the previous year. Customer retention improved significantly due to enhanced service quality. Key Findings: ● Revenue growth across all regions ● Expansion into two new markets ● Operational cost reduction by 8% Conclusion: Overall performance exceeded expectations.",
+      "executive_summary": ": The company experienced a 25% increase in revenue compared to the previous year. Customer retention improved significantly due to enhanced service quality. Key Findings: ● Revenue growth across all regions ● Expansion into two new markets ● Operational cost reduction by 8% Conclusion: Overall performance exceeded expectations.",
+      "date": "31",
+      "author": "Data Insights Team Date: 31 January 2026 Executive Summary: The company experienced a 25% increase in revenue compared to the previous year. Customer retention improved significantly due to enhanced service quality. Key Findings: ● Revenue growth across all regions ● Expansion into two new markets ● Operational cost reduction by 8% Conclusion: Overall performance exceeded expectations."
+    }
+  }
+]
