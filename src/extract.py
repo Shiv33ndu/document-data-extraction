@@ -51,52 +51,41 @@ def extract_invoice_fields(text: str) -> Dict:
 
 def extract_contract_fields(text: str) -> Dict:
     fields = {}
-
     text = normalize_text(text)
 
-    effective_date = re.search(
-        r"(Effective\s*Date)\s*[:\-]?\s*([0-9A-Za-z,./-]+)",
-        text,
-        re.IGNORECASE
-    )
+    effective_date = re.search(r"Effective\s*Date\s*[:\-]?\s*([0-9A-Za-z,.\s/-]+)", text, re.IGNORECASE)
+    
+    # improved parties regex to handle "Inc." or "Ltd."
+    # Looks for 'between' followed by the text until the end of that specific clause/line
+    parties = re.search(r"between\s+(.+?)\s+and\s+(.+?)(?=\n|\.|\s{2,})", text, re.IGNORECASE)
 
-    parties = re.search(
-        r"(between\s+.+?\s+and\s+.+?)[\.,]",
-        text,
-        re.IGNORECASE
-    )
-
-    fields["effective_date"] = effective_date.group(2) if effective_date else None
-    fields["parties"] = parties.group(1) if parties else None
-
+    fields["effective_date"] = effective_date.group(1).strip() if effective_date else None
+    if parties:
+        fields["parties"] = f"{parties.group(1).strip()} & {parties.group(2).strip()}"
+    else:
+        fields["parties"] = None
     return fields
 
 
 
 def extract_form_fields(text: str) -> Dict:
     fields = {}
-
-    text = normalize_text(text)
-
-    pairs = re.findall(r"([A-Za-z ]+):\s*(.+)", text)
-
+    # Key improvement: Ensure we don't grab the whole next paragraph as a 'value'
+    # This looks for 'Key: Value' appearing on its own line or followed by space
+    pairs = re.findall(r"^([A-Za-z ]+):\s*(.+)$", text, re.MULTILINE)
     for key, value in pairs:
         fields[key.strip().lower().replace(" ", "_")] = value.strip()
-
     return fields
 
 
 def extract_financial_fields(text: str) -> Dict:
     fields = {}
+    # Note: Use [\d,.]+ to capture full currency amounts with commas and decimals
+    assets = re.search(r"Total\s*Assets\s*[:\-]?\s*\$?\s*([\d,.]+)", text, re.IGNORECASE)
+    liabilities = re.search(r"Total\s*Liabilities\s*[:\-]?\s*\$?\s*([\d,.]+)", text, re.IGNORECASE)
 
-    text = normalize_text(text)
-
-    revenue = re.search(r"(Revenue)\s*[:\-]?\s*\$?\s*([0-9,]+)", text, re.IGNORECASE)
-    assets = re.search(r"(Total\s*Assets)\s*[:\-]?\s*\$?\s*([0-9,]+)", text, re.IGNORECASE)
-
-    fields["revenue"] = revenue.group(2) if revenue else None
-    fields["total_assets"] = assets.group(2) if assets else None
-
+    fields["total_assets"] = assets.group(1) if assets else None
+    fields["total_liabilities"] = liabilities.group(1) if liabilities else None
     return fields
 
 
