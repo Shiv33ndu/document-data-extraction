@@ -28,7 +28,7 @@ This prototype investigates a baseline approach using deterministic methods befo
 
 The system implements a modular end-to-end pipeline:
 
-Ingest → Text Extraction → Document Classification → Field Extraction → Structured Output
+Ingest -> Text Extraction -> Document Classification -> Field Extraction -> Structured Output
 
 1. **Ingest**  
    Discovers supported documents from a directory.
