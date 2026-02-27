@@ -3,7 +3,13 @@ name = "1docextraction"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.11, <3.12"
 dependencies = [
-    "pdfplumber>=0.11.9",
+    "docling>=2.75.0",
+    "numpy==1.26.4",
+    "paddleocr==2.9.1",
+    "paddlepaddle==3.2.0",
+    "pdf2image==1.17.0",
+    "pdfplumber==0.11.4",
+    "pillow==10.4.0",
 ]
