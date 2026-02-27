@@ -2,7 +2,16 @@ from pathlib import Path
 from typing import List
 
 
-SUPPORTED_EXTENSIONS = {".pdf", ".txt"}
+SUPPORTED_EXTENSIONS = {
+    ".pdf",
+    ".txt",
+    ".png",
+    ".jpg",
+    ".jpeg",
+    ".tiff",
+    ".tif",
+    ".bmp"
+}
 
 
 def discover_documents(input_dir: str) -> List[Path]:
