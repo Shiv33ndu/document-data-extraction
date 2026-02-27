@@ -1,5 +1,6 @@
 def main():
-    print("Hello from 1docextraction!")
+    import paddleocr
+    print(paddleocr.__file__)
 
 
 if __name__ == "__main__":
