@@ -10,3 +10,5 @@ wheels/
 .venv
 
 samples1/
+samples3/
+data/test/
